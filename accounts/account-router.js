@@ -18,11 +18,11 @@ router.get('/:id', (req, res) => {
    .from('accounts')
    .where('id', '=', req,params.id)
    .first()
-   .then(accounts => {
-       res.status(200).json(accounts);
+   .then(account => {
+       res.status(200).json(account);
    })
    .catch(error => {
-       res.status(500).json({ error:'Failed to get accounts from database'});
+       res.status(500).json({ error:'Failed to get account from database'});
    })
 });
 
@@ -31,10 +31,10 @@ router.post('/', (req, res) => {
    .insert(req.body, 'id')
    .into('accounts')
    .then(ids => {
-       res.status(200).json(post);
+       res.status(201).json(accounts);
    })
    .catch(error => {
-       res.status(500).json({error:'Failed to insert post from database'});
+       res.status(500).json({error:'Failed to insert accounts from database'});
    })
 });
 
