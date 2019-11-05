@@ -32,5 +32,12 @@ set postalcode = '11122'
 where contactname = 'Bilbo Baggins'
 ```
 ## (Stretch) Find a query to discover how many different cities are stored in the Customers table. Repeats should not be double counted
+```sql
+select distinct city from customer
+```
 
 ## (Stretch) Find all suppliers who have names longer than 20 characters. You can use `length(SupplierName)` to get the length of the name
+```sql
+select * from supplier
+where length(CompanyName) > 20
+```
