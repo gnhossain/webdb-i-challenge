@@ -16,7 +16,7 @@ router.get('/:id', (req, res) => {
    db
    .select('*')
    .from('accounts')
-   .where('id', '=', req,params.id)
+   .where('id', '=', req.params.id)
    .first()
    .then(account => {
        res.status(200).json(account);
